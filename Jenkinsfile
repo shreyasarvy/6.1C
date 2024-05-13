@@ -28,8 +28,21 @@ pipeline {
             echo "run integration tests to ensure the different components of the application work together as expected"
             echo "running unit tests using JUnit and running integration tests using Selenium"
             echo "Testing started and completed!"    
-            }
-            
+            }  
+        }
+        post {
+                success {
+                    emailext subject: 'Testing successful',
+                    body: 'Testing stage passed successfully.',
+                    to: 'shreya200564@gmail.com',
+                    attachmentsPattern: '**/*.log'
+                }
+                failure {
+                    emailext subject: 'Testing failed',
+                    body: 'Testing stage failed.',
+                    to: 'shreya200564@gmail.com',
+                    attachmentsPattern: '**/*.log'
+                }
         }
         stage('Code Analysis'){
             steps{
@@ -43,6 +56,20 @@ pipeline {
             echo "Performing security scan using Code Sonar"
             echo "Security scan completed!"    
             }
+        }
+        post {
+                success {
+                    emailext subject: 'Security scan successful',
+                    body: 'Security scan stage passed successfully.',
+                    to: 'shreya200564@gmail.com',
+                    attachmentsPattern: '**/*.log'
+                }
+                failure {
+                    emailext subject: 'Security scan failed',
+                    body: 'Security scan stage failed.',
+                    to: 'shreya200564@gmail.com',
+                    attachmentsPattern: '**/*.log'
+                }
         }
         stage('Deploy to Staging'){
             steps{
