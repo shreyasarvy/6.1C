@@ -79,8 +79,7 @@ pipeline {
         }
         stage('Integration tests'){
             steps{
-            echo "running integration tests on the staging environment to ensure the application functions as expected in a production-like
-                environment " 
+            echo "running integration tests on the staging environment to ensure the application functions as expected in a production-like environment" 
             echo "integration tests on staging completed!"  
             }
         }
