@@ -29,8 +29,7 @@ pipeline {
             echo "running unit tests using JUnit and running integration tests using Selenium"
             echo "Testing started and completed!"    
             }  
-        }
-        post {
+        post{
                 success {
                     emailext subject: 'Testing successful',
                     body: 'Testing stage passed successfully.',
@@ -43,7 +42,9 @@ pipeline {
                     to: 'shreya200564@gmail.com',
                     attachmentsPattern: '**/*.log'
                 }
+            }
         }
+        
         stage('Code Analysis'){
             steps{
             echo "analysing code to ensure it meets industry standard"
@@ -56,7 +57,6 @@ pipeline {
             echo "Performing security scan using Code Sonar"
             echo "Security scan completed!"    
             }
-        }
         post {
                 success {
                     emailext subject: 'Security scan successful',
@@ -70,7 +70,9 @@ pipeline {
                     to: 'shreya200564@gmail.com',
                     attachmentsPattern: '**/*.log'
                 }
+            }
         }
+        
         stage('Deploy to Staging'){
             steps{
             echo "deploy the application to a staging server AWS EC2"
