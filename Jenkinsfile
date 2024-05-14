@@ -33,13 +33,13 @@ pipeline {
                 success {
                     emailext subject: 'Testing successful',
                     body: 'Testing stage passed successfully.',
-                    to: 's223540981@deakin.edu.au',
+                    to: 'shreya200564@gmail.com',
                     attachmentsPattern: '**/*.log'
                 }
                 failure {
                     emailext subject: 'Testing failed',
                     body: 'Testing stage failed.',
-                    to: 's223540981@deakin.edu.au',
+                    to: 'shreya200564@gmail.com',
                     attachmentsPattern: '**/*.log'
                 }
             }
@@ -61,13 +61,13 @@ pipeline {
                 success {
                     emailext subject: 'Security scan successful',
                     body: 'Security scan stage passed successfully.',
-                    to: 's223540981@deakin.edu.au',
+                    to: 'shreya200564@gmail.com',
                     attachmentsPattern: '**/*.log'
                 }
                 failure {
                     emailext subject: 'Security scan failed',
                     body: 'Security scan stage failed.',
-                    to: 's223540981@deakin.edu.au',
+                    to: 'shreya200564@gmail.com',
                     attachmentsPattern: '**/*.log'
                 }
             }
