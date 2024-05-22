@@ -34,13 +34,15 @@ pipeline {
                     emailext subject: 'Testing successful',
                     body: 'Testing stage passed successfully.',
                     to: 'shreya200564@gmail.com',
-                    attachmentsPattern: '**/*.log'
+                    attachLog : 'true'
+                    
                 }
                 failure {
                     emailext subject: 'Testing failed',
                     body: 'Testing stage failed.',
                     to: 'shreya200564@gmail.com',
-                    attachmentsPattern: '**/*.log'
+                    attachLog : 'true'
+                    
                 }
             }
         }
@@ -62,13 +64,13 @@ pipeline {
                     emailext subject: 'Security scan successful',
                     body: 'Security scan stage passed successfully.',
                     to: 'shreya200564@gmail.com',
-                    attachmentsPattern: '**/*.log'
+                    attachLog : 'true'
                 }
                 failure {
                     emailext subject: 'Security scan failed',
                     body: 'Security scan stage failed.',
                     to: 'shreya200564@gmail.com',
-                    attachmentsPattern: '**/*.log'
+                    attachLog : 'true'
                 }
             }
         }
